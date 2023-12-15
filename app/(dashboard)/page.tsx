@@ -28,7 +28,6 @@ import { FormType } from "@/types/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ListIcon, PlusIcon, RefreshCwIcon, TrashIcon } from "lucide-react";
 import Link from "next/link";
-import { Router } from "next/router";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -91,7 +90,7 @@ function Home() {
 
           {forms.map((form) => {
             return (
-              <Link href={`/builder/${form.id}`} className="h-full">
+              <Link href={`/builder/${form.id}`} key={form.id} className="h-full">
                 <div
                   className="w-full h-full border rounded-2xl flex 
               justify-center items-start flex-col 
